@@ -1,0 +1,73 @@
+<!--pages/song-search/index.wxml-->
+<vant-search
+  background="#f1f2f6" 
+  shape="round"
+  value="{{searchVal}}"
+  show-action="{{searchVal}}"
+  placeholder="请搜索喜欢的歌曲"
+  bind:change="handleSearchChange"
+  bind:search="handleSearchAction"
+/>
+<!-- 历史搜索 -->
+<view class="hot history" wx:if="{{!searchVal.length && historySearch.length}}">
+  <area-header title-cls="header-title" title="历史搜索" show-right="{{false}}" line="{{false}}"></area-header>
+  <view class="keywords">
+    <block wx:for="{{historySearch}}" wx:key="first">
+      <view data-keyword="{{item}}" bindtap="handleKeywordItemClick" class="tag">{{item}}</view>
+    </block>
+  </view>
+</view>
+
+<!-- 热门搜索 -->
+<view class="hot" wx:if="{{!searchVal.length && !suggestSongs.length}}">
+  <area-header title-cls="header-title" title="热门搜索" show-right="{{false}}" line="{{false}}"></area-header>
+  <view class="keywords">
+    <block wx:for="{{hotKeywords}}" wx:key="first">
+      <view data-keyword="{{item.first}}" bindtap="handleKeywordItemClick" class="tag">{{item.first}}</view>
+    </block>
+  </view>
+</view>
+
+<!-- 建议搜索 -->
+<view class="suggest" wx:elif="{{suggestSongs.length && !resultSongs.length}}">
+  <view class="title">搜索"{{searchVal}}"</view>
+  <view class="list">
+    <block wx:for="{{suggestSongs}}" wx:key="keyword">
+      <view class="item" data-keyword="{{item.keyword}}" bindtap="handleKeywordItemClick">
+        <image class="icon" mode="widthFix" src="/assets/images/icons/search_icon.png"></image>
+        <!-- <text class="text">{{item.keyword}}</text> -->
+        <rich-text nodes="{{suggestSongsNodes[index]}}"></rich-text>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 搜索结果 -->
+<view class="result" wx:elif="{{resultSongs.length}}">
+  <scroll-view 
+    class="scroll-view"
+    scroll-y
+    bindscroll="{{scroll}}"
+    refresher-enabled="{{refresh}}"
+    refresher-triggered="{{triggered}}"
+    bindscrolltolower="onSearchResultLoading"
+    bindrefresherrefresh="onRefresh"
+    bindrefresherrestore="onRestore"
+  >
+    <view class="title">最佳匹配</view>
+    <view class="list">
+      <block wx:for="{{resultSongs}}" wx:key="id">
+        <song-item-v2 item="{{item}}" index="{{index}}"></song-item-v2>
+      </block>
+    </view>
+    <view class="more" wx:if="{{!hasMore}}">—— 没有更多数据了 ——</view>
+    <view wx:if="{{loading}}" class="loading">
+      <loading />
+    </view>
+  </scroll-view>
+</view>
+
+
+<loading center="{{true}}" wx:elif="{{resultSongs.length === 0 && hasMore}}" />
+
+<view class="more" wx:if="{{!hasMore && resultSongs.length === 0}}">—— 暂无该歌曲数据 ——</view>

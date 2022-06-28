@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/home-music/index",
+    "pages/home-video/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageDetail",
+      "name": "pDetail",
+      "pages": [
+        "pages/detail-video/index",
+        "pages/detail-songs/index",
+        "pages/song-search/index"
+      ]
+    },
+    {
+      "root": "packagePlayer",
+      "name": "pPlayer",
+      "pages": [
+        "pages/music-player/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/home-music/index": {
+      "network": "all",
+      "packages": ["packageDetail", "packagePlayer"]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f1f2f6",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#26ce8a",
+    "list": [
+      {
+        "pagePath": "pages/home-music/index",
+        "text": "音乐",
+        "iconPath": "assets/images/tabbar/music_normal.png",
+        "selectedIconPath": "/assets/images/tabbar/music_active.png"
+      },
+      {
+        "pagePath": "pages/home-video/index",
+        "text": "视频",
+        "iconPath": "assets/images/tabbar/video_normal.png",
+        "selectedIconPath": "assets/images/tabbar/video_active.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": ["audio"],
+  "usingComponents": {
+    "loading": "/components/base/loading/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

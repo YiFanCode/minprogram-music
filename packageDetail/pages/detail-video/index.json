@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "视频",
+  "usingComponents": {
+    "video-item-v2": "/components/video-item-v2/index"
+  }
+}

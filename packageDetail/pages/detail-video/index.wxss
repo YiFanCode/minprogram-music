@@ -1,0 +1,48 @@
+page{
+  background: #f1f2f6;
+  padding-top: 225px;
+}
+.video{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.info{
+  padding: 30rpx;
+  background: #fff;
+}
+
+.info .title{
+  font-weight: 700;
+}
+
+.info .desc, .info .other{
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 14rpx;
+}
+.info .desc{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 3;
+  -moz-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+.info .other{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.recommend{
+  padding: 30rpx 20rpx;
+}

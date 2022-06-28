@@ -1,0 +1,13 @@
+<wxs module="format" src="/utils/format.wxs"></wxs>
+<view class="video-item">
+  <view class="video-album">
+    <image class="image" mode="widthFix" src="{{item.cover}}"></image>
+    <view class="video-info">
+      <view class="count">{{format.formatCount(item.playCount)}}</view>
+      <view class="duration">{{format.formatDuration(item.mv.videos[0].duration)}}</view>
+    </view>
+  </view>
+  <view class="video-content">
+  {{item.name}} - {{item.artistName}}
+  </view>
+</view>

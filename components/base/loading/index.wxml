@@ -1,0 +1,5 @@
+<!--components/base/loading/index.wxml-->
+<view class="loading {{center ? 'center' : ''}}">
+  <image src="./loading.gif" class="image"></image>
+  <text class="title">{{title}}</text>
+</view>

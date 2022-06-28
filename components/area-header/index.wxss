@@ -1,0 +1,38 @@
+/* components/area-header/index.wxss */
+.header{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .title{
+  position: relative;
+  color: #333;
+  font-size: 36rpx;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+.header .title .line{
+  height: 40rpx;
+  width: 6rpx;
+  border-radius: 3rpx;
+  margin-right: 15rpx;
+  background-color: #26ce8a;
+}
+
+.header .slot:empty + .default{
+  display: flex;
+}
+
+.header .default{
+  display: none;
+  align-items: center;
+  font-size: 28rpx;
+  color: #777;
+}
+.header .default .icon{
+  width: 50rpx;
+  height: 50rpx;
+}

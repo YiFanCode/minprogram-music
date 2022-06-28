@@ -1,0 +1,21 @@
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.title{
+  font-size: 26rpx;
+  color: gray;
+}
+
+.center{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

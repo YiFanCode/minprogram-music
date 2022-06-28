@@ -1,0 +1,13 @@
+<view class="header">
+  <view class="title title-cls">
+    <view wx:if="{{line}}" class="line"></view>
+    <view>{{title}}</view>
+  </view>
+  <view class="right" wx:if="{{showRight}}" bindtap="handleRight">
+    <view class="slot"> <slot></slot></view>
+    <view class="default">
+        <text>{{rightText}}</text>
+        <image class="icon" src="/assets/images/icons/arrow-right.png"></image>
+      </view>
+  </view>
+</view>

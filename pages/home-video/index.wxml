@@ -1,0 +1,12 @@
+
+<view class="video">
+  <view class="video-item" wx:for="{{topMvs}}" wx:key="id">
+    <video-item-v1 
+      item="{{item}}"
+      data-item="{{item}}"
+      bindtap="videoDetail"
+    />
+  </view>
+  <loading wx:if="{{loading}}" center="{{centerLoading}}" title="加载中..."/>
+  <view class="more" wx:if="{{!hasMore}}">—— 没有更多数据了 ——</view>
+</view>

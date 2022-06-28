@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搜索",
+  "usingComponents": {
+    "vant-search": "@vant/weapp/search/index",
+    "area-header": "/components/area-header/index",
+    "song-item-v2": "/components/song-item-v2/index"
+  }
+}

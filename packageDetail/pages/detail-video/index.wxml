@@ -1,0 +1,26 @@
+<wxs src="/utils/format.wxs" module="format" />
+<loading wx:if="{{loading}}" center="{{true}}" /> 
+<video 
+  class="video" 
+  src="{{mvURLInfo.url}}" 
+  loop
+  referrer-policy="origin"
+  poster="{{mvDetail.cover}}"  
+></video>
+<view class="info">
+  <view class="title">{{mvDetail.name}}</view>
+  <view class="desc">{{mvDetail.artistName}} - {{mvDetail.desc}}</view>
+  <view class="other">
+    <text class="play-count">{{format.formatCount(mvDetail.playCount)}}</text>
+    <text class="publish-time">{{mvDetail.publishTime}}</text>
+  </view>
+</view>
+
+<view class="recommend">
+  <view class="title">推荐视频</view>
+  <view class="video-list">
+    <block wx:for="{{relatedVideo}}" wx:key="vid">
+      <video-item-v2 itemInfo="{{item}}"/>
+    </block>
+  </view>
+</view>

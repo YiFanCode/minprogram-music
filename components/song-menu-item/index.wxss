@@ -1,0 +1,54 @@
+/* components/song-menu-item/index.wxss */
+.song-item{
+  width: 100%;
+  padding-bottom: 10rpx;
+  background: #fff;
+  border-radius:12rpx;
+  overflow: hidden;
+}
+
+.top {
+  position: relative;
+  border-radius: 12rpx 12rpx 0 0;
+  overflow: hidden;
+}
+
+.top .image{
+  width: 100%;
+}
+.top .play-count{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 24rpx;
+  padding: 6rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, .1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+}
+.bottom{
+  width: 100%;
+  min-height: 76rpx;
+  padding: 0 10rpx;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  line-height: 39rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 2;
+  -moz-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}

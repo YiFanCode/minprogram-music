@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "视频",
+  "usingComponents": {
+    "video-item-v1": "/components/video-item-v1/index"
+  }
+}
